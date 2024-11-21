@@ -11,76 +11,38 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
-<!--from here: alpha-->
-<!--  <div>-->
-<!--    <th:block th:each="job : ${jobs}">-->
-<!--<table>-->
-<!--  <tr>-->
-<!--    <td th:text="${job.id}"></td>-->
-<!--    <td th:text="${job.name}"></td>-->
-<!--    <td th:text="${job.employer}"></td>-->
-<!--    <td th:text="${job.location}"></td>-->
-<!--    <td th:text="${job.positionType}"></td>-->
-<!--    <td th:text="${job.coreCompetency}"></td>-->
-<!--  </tr>-->
-<!--</table>-->
-<!--    </th:block>-->
-<!--  </div>-->
-<!--to here: alpha-->
 
-<!--  from here: beta-->
-  <!--  <div>-->
-<!--    <table>-->
-<!--    <th:block th:each="jobs : ${jobs}">-->
-<!--        <tr>-->
-<!--          <td th:text="${jobs.id}"></td>-->
-<!--          <td th:text="${jobs.name}"></td>-->
-<!--          <td th:text="${jobs.employer}"></td>-->
-<!--          <td th:text="${jobs.location}"></td>-->
-<!--          <td th:text="${jobs.positionType}"></td>-->
-<!--          <td th:text="${jobs.coreCompetency}"></td>-->
-<!--        </tr>-->
-<!--    </th:block>-->
-<!--    </table>-->
-<!--  </div>-->
-<!--  to here: beta-->
-
-<!--  from here: gamma-->
-<!--  <div>-->
-<!--    <h3 th:each="jobs : ${jobs}" th:text="${jobs.name}"></h3>-->
-<!--  </div>-->
-<!--  to here: gamma-->
-
-
-    <div>
+    <div th:fragment="tableOfJobs">
 
       <th:block th:each="job : ${jobs}">
-        <table>
+        <table class="job-listing">
+
             <tr>
-              <td>ID</td>
+              <td><strong>ID</strong></td>
               <td th:text="${job.id}"></td>
             </tr>
             <tr>
-              <td>Name</td>
+              <td><strong>Name</strong></td>
               <td th:text="${job.name}"></td>
             </tr>
           <tr>
-            <td>Employer</td>
+            <td><strong>Employer</strong></td>
             <td th:text="${job.employer}"></td>
           </tr>
           <tr>
-            <td>Location</td>
+            <td><strong>Location</strong></td>
             <td th:text="${job.location}"></td>
           </tr>
           <tr>
-            <td>Position Type</td>
+            <td><strong>Position Type</strong></td>
             <td th:text="${job.positionType}"></td>
           </tr>
           <tr>
-            <td>Skill</td>
+            <td><strong>Skill</strong></td>
             <td th:text="${job.coreCompetency}"></td>
           </tr>
         </table>
+<!--        <br>-->
       </th:block>
     </div>
 </div>
